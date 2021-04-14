@@ -160,7 +160,7 @@ def run_eval(args):
         running_ssim.append(ssim)
 
         if args.save_output:
-            fname = this_dir.split('\\')[-1]
+            fname = this_dir.split('/')[-1]
             plt.imsave(os.path.join(args.output_dir, fname[:-4] + '_input.png'), img_mix)
             plt.imsave(os.path.join(args.output_dir, fname[:-4] + '_gt1.png'), gt)
             plt.imsave(os.path.join(args.output_dir, fname[:-4] + '_output1.png'), G_pred1)

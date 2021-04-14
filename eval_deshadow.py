@@ -119,7 +119,7 @@ def run_eval(args):
         m_pxl_bg += error_map[mask==0].size / 3.0
 
         if args.save_output:
-            fname = this_dir.split('\\')[-1]
+            fname = this_dir.split('/')[-1]
             plt.imsave(os.path.join(args.output_dir, fname[:-4]+'_input.png'), img_mix)
             plt.imsave(os.path.join(args.output_dir, fname[:-4]+'_gt.png'), gt)
             plt.imsave(os.path.join(args.output_dir, fname[:-4]+'_output.png'), G_pred)
