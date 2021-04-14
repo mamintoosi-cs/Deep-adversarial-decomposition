@@ -29,11 +29,11 @@ class UnmixGAN():
         self.net_D1 = cycnet.define_D(input_nc=6, ndf=64, netD='n_layers', n_layers_D=2).to(device)
         self.net_D2 = cycnet.define_D(input_nc=6, ndf=64, netD='n_layers', n_layers_D=2).to(device)
         self.net_D3 = cycnet.define_D(input_nc=6, ndf=64, netD='n_layers', n_layers_D=3).to(device)
-        # self.net_G = cycnet.define_G(
-        #     input_nc=3, output_nc=6, ngf=args.ngf, netG=args.net_G, use_dropout=False, norm='none').to(device)
-        # M.Amintoosi norm='instance'
         self.net_G = cycnet.define_G(
-            input_nc=3, output_nc=6, ngf=args.ngf, netG=args.net_G, use_dropout=False, norm='instance').to(device)
+            input_nc=3, output_nc=6, ngf=args.ngf, netG=args.net_G, use_dropout=False, norm='none').to(device)
+        # M.Amintoosi norm='instance'
+        # self.net_G = cycnet.define_G(
+        #     input_nc=3, output_nc=6, ngf=args.ngf, netG=args.net_G, use_dropout=False, norm='instance').to(device)
 
         # Learning rate and Beta1 for Adam optimizers
         self.lr = args.lr
