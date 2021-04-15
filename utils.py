@@ -1040,7 +1040,7 @@ def get_loaders(args):
 
     datasets = {'train': training_set, 'val': val_set}
     dataloaders = {x: DataLoader(datasets[x], batch_size=args.batch_size,
-                                 shuffle=True, num_workers=8)
+                                 shuffle=True, num_workers=2)
                    for x in ['train', 'val']}
 
     return dataloaders
