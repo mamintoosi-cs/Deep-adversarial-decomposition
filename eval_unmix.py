@@ -88,6 +88,11 @@ def run_eval(args):
         val_dirs = glob.glob(os.path.join(datadir, '*.webp'))
         datadir2 = r'/scratch/jpye_root/jpye/zzhengxi/lsun-master/raw_data/val/church_outdoor'
         val_dirs2 = glob.glob(os.path.join(datadir2, '*.webp'))
+    elif args.dataset == 'custom':
+        datadir = r'./images/custom'
+        val_dirs = glob.glob(os.path.join(datadir, 'dog*.jpg'))
+        datadir_flowers = r'./images/custom'
+        val_dirs_flowers = glob.glob(os.path.join(datadir_flowers, 'flower*.jpg'))
 
     for idx in range(len(val_dirs)):
 
@@ -116,9 +121,9 @@ def run_eval(args):
             img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
 
         elif args.dataset == 'custom':
-            img1 = cv2.imread('images/dog.986.jpg', cv2.IMREAD_COLOR)
+            img1 = cv2.imread(val_dirs[idx], cv2.IMREAD_COLOR)
             img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
-            img2 = cv2.imread('images/ganzia.jpg', cv2.IMREAD_COLOR)
+            img2 = cv2.imread(val_dirs_flowers[idx], cv2.IMREAD_COLOR)
             img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
 
 
