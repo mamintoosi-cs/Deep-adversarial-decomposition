@@ -115,6 +115,11 @@ def run_eval(args):
             img2 = cv2.imread(val_dirs2[-idx], cv2.IMREAD_COLOR)
             img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
 
+        elif args.dataset == 'custom':
+            img1 = cv2.imread('images/dog.986.jpg', cv2.IMREAD_COLOR)
+            img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
+            img2 = cv2.imread('images/ganzia.jpg', cv2.IMREAD_COLOR)
+            img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2RGB)
 
 
         # we recommend to use TF.resize since it was also used during trainig
